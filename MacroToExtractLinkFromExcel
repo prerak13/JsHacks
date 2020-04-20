@@ -1,0 +1,3 @@
+Function GetURL(pWorkRng As Range) As String
+GetURL = pWorkRng.Hyperlinks(1).Address
+End Function
