@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<title>Open Windows</title>
+<script>
+function openWindow(){
+    var x = document.getElementById('a').value.split('\n');
+    for (var i = 0; i < x.length; i++)
+        if (x[i].indexOf('.') > 0)
+            if (x[i].indexOf('://') < 0)
+                window.open('http://'+x[i]);
+            else
+                window.open(x[i]);
+}
+</script>
+<style>
+html, body
+{
+    height : 99%;
+    width  : 99%;
+}
+ 
+textarea
+{
+    height : 80%;
+    width  : 90%;
+}
+</style>
+</head>
+<body>
+<textarea id="a"></textarea>
+<br>
+<input type="button" value="Open Windows" onClick="openWindow()">
+<input type="button" value="Clear" onClick="document.getElementById('a').value=''">
+</body>
+</html>
